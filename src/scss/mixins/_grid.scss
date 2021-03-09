@@ -1,0 +1,73 @@
+// CSS Flex
+@mixin flex($justify: 'center') {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+}
+@mixin flex-dir($dir) {
+    flex-direction: $dir;
+}
+@mixin two-flex() {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin: 0 0 $base-spacing;
+    @media ($menu) {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+}
+@mixin three-flex() {
+    max-width: 100%;
+    flex: 0 0 100%;
+    @media ($menu) {
+        max-width: calc(1 / 2 * 100%);
+        flex: 0 0 calc(1 / 2 * 100%);
+    }
+    @media ($laptop) {
+        max-width: calc(1 / 3 * 100%);
+        flex: 0 0 calc(1 / 3 * 100%);
+    }
+}
+@mixin four-flex() {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin: 0 0 $base-spacing;
+    @media ($menu) {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    @media ($tablet) {
+        max-width: calc(1 / 3 * 100%);
+        flex: 0 0 calc(1 / 3 * 100%);
+    }
+    @media ($laptop) {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+}
+// CSS Grid
+@mixin two-col() {
+    width: 100%;
+    flex: 0 0 100%;
+    @media ($menu) {
+        width: 50%;
+        flex: 0 0 50%;
+    }
+}
+@mixin two-col-new() {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    @media ($menu) {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@mixin three-col() {
+    -ms-grid-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 45px;
+}
+@mixin four-col() {
+    -ms-grid-columns: repeat(auto-fit, minmax(440px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+}

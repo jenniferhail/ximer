@@ -1,0 +1,132 @@
+// Breakpoints
+// $laptop: "max-width: 1260px";
+// $tablet: "max-width: 768px";
+// $tablet-mf: "min-width: 769px";
+// $mobile-lg: "max-width: 680px";
+// $mobile-sm: "max-width: 480px";
+$desktop: "min-width: 1000px";
+$laptop: "min-width: 768px";
+$tablet: "min-width: 680px";
+$mobile: "min-width: 480px";
+$menu: "min-width: 840px";
+$mobile-only: "max-width: 839px";
+
+// @mixin media($size) {
+//     @media ($size) { @content; }
+// }
+
+// Paths
+// $img-path: '/app/themes/mightily/dist/assets/img/';
+// $font-path: '/app/themes/mightily/dist/assets/fonts/';
+$img-path: '/assets/img/';
+$font-path: '../fonts/';
+
+// Typography
+$font-one: proxima-nova, 'Open Sans', 'Gill Sans MT', 'Gill Sans', Corbel, Arial, sans-serif; // Regular: 400, Bold: 700
+$font-two: neuzeit-grotesk, sans-serif; // Black: 900, Bold: 700, Regular: 400, Light: 300
+
+$base-font-family: $font-one;
+$heading-font-family: $font-two;
+
+// Font Size
+$base-font-size: 20px;
+$mobile-font-size: 14px;
+
+// Line Height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Font Weight
+$base-font-weight: 400;
+$black-weight: 900;
+$bold-weight: 700;
+$heading-font-weight: $base-font-weight;
+
+// Other Sizes
+$bottom-margin: 100px;
+$bt-margin-l: 80px;
+$bt-margin-sm: 40px;
+$base-border-radius: 0px;
+$base-spacing: 45px;
+$small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing * 2;
+$base-z-index: 0;
+$icon-size: 30px;
+
+// Colors
+$red: #be3600;
+$orange: #f15c22;
+$light-orange: #f48721;
+
+$dark-blue: #151f3f;
+$blue: #3469b3;
+$light-blue: #4AD2F7; // #72d0f3
+
+$green: #56b650;
+$light-green: #89c63e;
+
+$gray: #686b79;
+$light-gray: #d1d1d1;
+$black: #000000;
+$white: #ffffff;
+$transparent: rgba(255,255,255,0);
+
+$base-fade: 0.8;
+
+$primary: $dark-blue;
+$secondary: $green;
+$links: $primary;
+$hover: $secondary;
+
+// Font Colors
+$base-font-color: $dark-blue;
+$action-color: $orange;
+$error-color: $red;
+$color-selection: $light-gray;
+
+// Buttons
+$btn-bg-color: $orange;
+$btn-text-color: $white;
+$btn-text-color-hover: $white;
+$btn-bg-color-hover: $red;
+$btn-border-radius: 0;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: $white;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Transitions
+$base-duration: 300ms;
+$base-timing: ease-in-out;
+
+// Gradient
+@mixin gradient($color) {
+    @if $color == darkBlue {
+        background: linear-gradient(90deg, $blue 0%, $dark-blue 100%);
+    } @else if $color == lightBlue {
+        background: linear-gradient(90deg, $light-blue 0%, $blue 100%);
+    } @else if $color == orange {
+        background: linear-gradient(90deg, $light-orange 0%, $orange 100%);
+    } @else if $color == green {
+        background: linear-gradient(90deg, $light-green 0%, $green 100%);
+    }
+    
+}
+
+// Opacity Hover
+@mixin opacity() {
+    opacity: 1;
+    &:hover,
+    &:focus {
+        opacity: $base-fade;
+    }
+}

@@ -1,0 +1,88 @@
+.layout.profile {
+    overflow: hidden;
+    // Used in hero.scss too
+    .row {
+        display: flex;
+        align-items: center;
+        @media ($tablet) {
+            display: block;
+        }
+    }
+    .col {
+        flex: 1 0 0;
+        display: block;
+    }
+    &.content-left {
+        .content {
+            padding-left: 0;
+            padding-right: 80px;
+            @media ($tablet) {
+                padding-right: 0;
+            }
+        }
+        .image {
+            margin-right: auto;
+            @media ($tablet) {
+                margin-right: 0;
+            }
+        }
+    }
+    &.content-right {
+        .content {
+            padding-left: 80px;
+            padding-right: 0;
+            @media ($tablet) {
+                padding-left: 0;
+            }
+        }
+        .image {
+            margin-left: auto;
+            @media ($tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+    // End - Used in hero.scss too
+    .col:first-child {
+        padding: 60px 0;
+        @media ($tablet) {
+            padding: 60px 0 0;
+        }
+    }
+    .image {
+        position: relative;
+        max-width: 380px;
+        max-height: 360px;
+        border: $base-border;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: visible;
+        @media ($tablet) {
+            margin-bottom: 30px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-top: calc(100% - 20px);
+        }
+    }
+    .title,
+    .subtitle,
+    p {
+        margin-bottom: 5px;
+    }
+    p {
+        font-family: $font-one;
+        font-size: 22px;
+        font-style: italic;
+    }
+    .titles {
+        margin-bottom: 30px;
+        .title {
+            color: $base-font-color;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+$h1-font-size: 60px;
+$h1-line-height: 1.08;
+
+$h2-font-size: 64px;
+$h2-line-height: 1;
+
+$h3-font-size: 32px;
+$h3-line-height: 1.4;
+
+$h4-font-size: 42px;
+$h4-line-height: 1;
+
+$h5-font-size: 30px;
+$h5-line-height: 1.3;
+
+$h6-font-size: 85px;
+$h6-line-height: 1.06;
+
+$headings: 
+    "h1" 60px 21px $black-weight 1.08, 
+    "h2" 64px 18px $base-font-weight 1, 
+    "h3" 32px 20px $black-weight 1.4,
+    "h4" 42px 16px $base-font-weight 1, 
+    "h5" 30px 20px $bold-weight 1.3, 
+    "h6" 85px 20px $bold-weight 1.06;
+
+@each $heading, $size, $mobile-size, $font-weight, $line-height in $headings {
+	#{$heading},
+	.#{$heading} {
+		font-size: $mobile-size;
+        line-height: $line-height;
+        font-family: $heading-font-family;
+        font-weight: $font-weight;
+
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+        margin-left: 0;
+        &.underline {
+            display: inline-block;
+            border-bottom: 2px solid $primary;
+        }
+        @media ($menu) {
+            font-size: $size;
+        }
+	}
+}
+
+@mixin link-style() {
+    font-family: $base-font-family;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    font-weight: $bold;
+}
+
+html {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $mobile-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  -webkit-font-smoothing: antialiased;
+  @media ($tablet) {
+    font-size: $base-font-size;
+  }
+}
+
+a {
+    color: $action-color;
+    text-decoration-skip: auto;
+    transition: all $base-duration $base-timing;
+    text-decoration: none;
+
+    &:focus {
+        outline: $focus-outline;
+        outline-offset: $focus-outline-offset;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    a {
+        text-decoration: underline;
+    }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+blockquote {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}

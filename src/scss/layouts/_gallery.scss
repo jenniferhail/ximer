@@ -1,0 +1,91 @@
+.block.gallery {
+    position: relative;
+    padding-bottom: 50px;
+    @media ($menu) {
+        padding-bottom: 80px;
+    }
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+    &.bg-blue:after,
+    &.bg-green:after,
+    &.bg-orange:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @media ($menu) {
+            height: 380px;
+        }
+    }
+    &.bg-blue:after {
+        @include gradient(darkBlue);
+    }
+    &.bg-green:after {
+        @include gradient(green);
+    }
+    &.bg-orange:after {
+        @include gradient(orange);
+    }
+    &.slider {
+        margin-bottom: 45px;
+        padding-bottom: 0;
+        &.bg-blue:after,
+        &.bg-green:after,
+        &.bg-orange:after {
+            position: absolute;
+            top: 200px;
+            bottom: auto;
+            left: 0;
+            height: 265px;
+            @media ($menu) {
+                top: auto;
+                bottom: 60px;
+                height: calc(600px - 60px);
+            }
+        }
+        .row.full-width {
+            .col.image {
+                margin-bottom: 30px;
+            }
+        }
+        .slick-list {
+            width: 100%;
+        }
+        .items {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .item {
+            flex: 0 0 20%;
+            padding: 0 15px 0;
+            @media ($tablet) {
+                flex: 0 0 calc(1 / 3 * 100%);
+            }
+        }
+    }
+    &.image,
+    &.slider {
+        .row.full-width {
+            .col.image {
+                height: 400px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                @media ($menu) {
+                    height: 600px;
+                }
+            }
+        }
+    }
+}

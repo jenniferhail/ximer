@@ -1,0 +1,44 @@
+.block.cta {
+    padding: $base-spacing 0;
+    color: $white;
+    @include gradient(lightBlue);
+    .content {
+        text-align: center;
+        @media ($menu) {
+            display: flex;
+            align-items:  center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            text-align: left;
+        }
+    }
+    .title,
+    p {
+        margin-bottom: 0;
+    }
+    p,
+    .buttons {
+        @media ($mobile-only) {
+            padding-top: $small-spacing;
+        }
+    }
+    .title {
+        @extend .h3;
+        text-transform: uppercase;
+        @media ($menu) {
+            display: block;
+            flex: 1 0 205px;
+            width: 205px;
+        }
+    }
+    .buttons {
+        @media ($menu) {
+            flex: 1 0 25%;
+            max-width: 25%;
+            text-align: right;
+        }
+        .wp-block-button__link {
+            margin-bottom: 0;
+        }
+    }
+}

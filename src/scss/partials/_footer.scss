@@ -1,0 +1,55 @@
+footer {
+    @include disableLists();
+    padding: $base-spacing 0;
+    color: $light-blue;
+    font-size: 16px;
+    @include gradient(darkBlue);
+    @media ($menu) {
+        padding: 80px 0;
+    }
+    .wrapper {
+        display: block;
+        text-align: center;
+        @media ($menu) {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+    }
+    .logo {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 1;
+        letter-spacing: 3px;
+        @media ($menu) {
+            width: 205px;
+        }
+    }
+    a {
+        color: $light-blue;
+    }
+    .footer-nav,
+    .copyright {
+        @media ($mobile-only) {
+            padding-top: $small-spacing;
+        }
+    }
+    .footer-nav {
+        @media ($menu) {
+            flex: 1 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .copyright {
+        @media ($menu) {
+            width: 100%;
+            flex: 1 0 100%;
+            padding: 10px 0 0;
+        }
+    }
+}

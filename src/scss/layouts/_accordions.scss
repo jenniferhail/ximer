@@ -1,0 +1,50 @@
+.block.accordions {
+    // Removing default accordion arrow
+    details > summary::-webkit-details-marker {
+		display: none;
+    }
+    &.bg {
+        max-width: 1400px;
+        margin: auto;
+        padding: $base-spacing 30px;
+        .wrapper {
+            padding: 0;
+        }
+    }
+    .intro {
+        text-align: center;
+    }
+    .accordion {
+        position: relative;
+        padding: 15px 0;
+        border-bottom: $base-border;
+        .title {
+            color: $action-color;
+            font-family: $font-two;
+            font-size: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            &:after {
+                content: '';
+                background-image: url($img-path + 'arrow-down.svg');
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                top: 21px;
+                right: 0;
+                transform: rotate(90deg);
+                transition: transform $base-duration $base-timing;
+            }
+        }
+        .content {
+            display: none;
+            padding: 30px 56px;
+        }
+        &.active {
+            .title:after {
+                transform: rotate(0deg);
+                transition: transform $base-duration $base-timing;
+            }
+        }
+    }
+}

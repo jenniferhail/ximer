@@ -1,0 +1,116 @@
+html {
+  background-color: $viewport-background-color;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  // This will stick the footer to the bottom of the page if there isn't enough content
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  &.front-end {
+    // padding-top: 200px;
+    @media ($mobile-only) {
+      padding-top: 55px; // $header-height
+    }
+  }
+}
+
+#main,
+.footer {
+  min-width: 0; // Fix overflowing content b/c of the sticky footer solution
+}
+
+// DELETE FOR PRODUCTION
+// Style guide spacing
+.block {
+  &:not(.cta) {
+    margin-bottom: 200px;
+  }
+  &.intro {
+    margin-bottom: 80px;
+  }
+}
+
+.wrapper,
+.wp-block-group__inner-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 30px;
+}
+.wp-block-group__inner-container {
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.visually-hidden,
+.visually-hide-label, 
+.visually-hide-text {
+  position: absolute;
+  right: 999999999px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.align-left,
+.text-align-left {
+  text-align: left;
+}
+.text-align-center,
+.align-center {
+  text-align: center;
+}
+.align-right,
+.text-align-right {
+  text-align: right;
+}
+
+.content-left .row {
+  flex-direction: row-reverse;
+}
+.content-right .row {
+  flex-direction: row;
+}
+.content-center .row {
+  text-align: center;
+  .buttons {
+    justify-content: center;
+  }
+}
+
+// .image-top-left {
+
+// }
+// .image-top-right {
+
+// }
+// .image-top-center {
+
+// }
+// .image-bottom-left {
+
+// }
+// .image-bottom-right {
+
+// }
+// .image-bottom-center {
+
+// }
+// .image-center {
+
+// }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ximer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="https://use.typekit.net/gpt5ldb.css">
+	<!-- <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+	<script src="https://kit.fontawesome.com/15caa5e93e.js" crossorigin="anonymous"></script>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico/favicon-16x16.png">
+	<link rel="manifest" href="../favicon.ico/site.webmanifest">
+</head>
+
+<body class="front-end">
+
+
+
+    <nav class="skip-nav">
+        <ul class="skip-menu">
+            <a href="#nav-toggle" class="menu-item">Skip to main menu</a>
+            <a href="#main" class="menu-item">Skip to main content</a>
+        </ul>
+    </nav>
+
+    <header class="header">		
+        <div class="wrapper">
+            <a class="logo" href="/" target="_self">
+                <span class="text">Ximer</span>
+            </a>
+            <button id="nav-toggle" class="nav-toggle">
+                <span class="toggle-wrapper">
+                    <span class="toggle-bar toggle-bar-1"></span>
+                    <span class="toggle-bar toggle-bar-2"></span>
+                    <span class="toggle-bar toggle-bar-3"></span>
+                    <span class="toggle-bar toggle-bar-4"></span>
+                </span>
+                <span class="visually-hide-text">Show Main Menu</span>
+            </button>
+            <nav class="header-nav">
+                <ul class="main-menu">
+                    <li class="menu-item current-menu-item">
+                        <a href="#">Products</a><button class="submenu-btn" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.8 40.4"><style type="text/css">  
+                            .svg-arrow-left{fill:#73D0F2;}
+                            </style><polygon class="svg-arrow-left" points="22.3 20.3 31.9 13.9 31.9 4.8 8.8 20.3 31.9 35.8 31.9 26.8 "/></svg>
+                            <span class="visually-hidden">Show Submenu for "Products"</span>
+                        </button>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a href="#">Ximer Mobile</a></li>
+                            <li class="menu-item"><a href="#">Ximer Stream</a></li>
+                            <li class="menu-item"><a href="#">Ximer Sphere</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#">Support</a></li>
+                    <li class="menu-item"><a href="#">About</a></li>
+                    <li class="menu-item"><a href="#">Get Ximer</a></li>
+                    <li class="menu-item"><a href="#">Contact Us</a></li>
+                    <!-- <li class="menu-item">
+                        <a href="/">Style Guide</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item" v-for="layout in layouts">
+                                <a v-bind:href="'/#' + layout.id">{{layout.dataset.menutitle}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="/scratchpad.html">Scratch Pad</a></li>
+                    <li class="menu-item"><a href="/single.html">Single Post</a></li>
+                    <li class="menu-item"><a href="/profile.html">Profile</a></li>
+                    <li class="menu-item"><a href="/404.html">404 Page</a></li>
+                    <li class="menu-item"><a href="/cards.html">Cards</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+	<section class="layout basic-content content-center">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="content">
+                        <h1>404</h1>
+                        <p class="h1">Headline Here About Getting Lost</p>
+                    </div>
+                    <div class="buttons">
+                        <a href="/" target="_self" class="btn">Go Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="wrapper">
+        <a class="logo" href="/" target="_self">Ximer</a>
+        <nav class="footer-nav">
+            <ul class="footer-menu one">
+                <li class="menu-item"><a href="#">Products</a></li>
+                <li class="menu-item"><a href="#">Support</a></li>
+                <li class="menu-item"><a href="#">About</a></li>
+                <li class="menu-item"><a href="#">Get Ximer</a></li>
+                <li class="menu-item"><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="footer-menu two">
+                <li class="menu-item"><a href="#">Privacy Policy</a></li>
+                <li class="menu-item"><a href="#">Rainbow Design Services</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">©2020 Rainbow Design Services</div>
+    </div>
+</footer>
+
+<!-- development version of vue.js, includes helpful console warnings -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Aerolab/midnight.js@1.1.2/midnight.jquery.min.js"></script>
+<script src="assets/js/bundle.js"></script>
+<script>
+    // Start midnight
+    $(document).ready(function(){
+        // Change this to the correct selector for your nav.
+        $('.header-nav').midnight();
+    });
+</script>
+</body>
+
+</html>

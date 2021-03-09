@@ -1,0 +1,178 @@
+$header-height: 55px;
+.header {
+    @include disableLists;
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    @include gradient(orange);
+    @media ($menu) {
+        background: none;
+        height: auto;
+    }
+    .logged-in & {
+        top: 32px;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 13px;
+        padding-bottom: 12px;
+        @media ($menu) {
+            justify-content: flex-end;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+    .logo {
+        display: inline-block;
+        color: $white;
+        z-index: 9;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 30px;
+        letter-spacing: 2px;
+        line-height: 1;
+        @media ($menu) {
+            position: fixed;
+            top: -70px;
+            left: 0;
+            color: white;
+            padding: 30px 45px;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+        &:after {
+            @media ($menu) {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                @include gradient(orange);
+            }
+        }
+    }
+    .social-menu {
+        padding: 30px;
+    }
+    .header-nav {
+        z-index: 4;
+        @media ($mobile-only) {
+            position: absolute !important; // Overriding Midnight JS on mobile
+            top: $header-height !important; // Overriding Midnight JS on mobile
+            right: 0;
+            width: 100%;
+            height: calc(100vh - #{$header-height}) !important; // Overriding Midnight JS on mobile
+            overflow-y: scroll;
+            opacity: 0;
+            pointer-events: none;
+            background-color: #1B5AA0;
+            transform: translateX( 100% );
+            transition: transform 500ms $base-timing, opacity 0ms $base-timing 500ms;
+        }
+        @media ($menu) {
+            position: relative;
+            top: 0;
+            height: auto;
+        }
+        &.hide {
+            @media ($menu) {
+                transform: translateY( calc(-100% - 30px) );
+                transition: transform 500ms ease-in-out 500ms;
+            }
+        }
+        &.reveal {
+            @media ($menu) {
+                transform: translateY(0);
+                transition: transform 500ms ease-in-out;
+            }
+        }
+        .main-menu {
+            @media ($mobile-only) {
+                padding: 30px 30px 45px;
+            }
+            @media ($menu) {
+                padding: 30px;
+            }
+        }
+    }
+}
+.header.active {
+    .header-nav {
+        @media ($mobile-only) {
+            opacity: 1;
+            pointer-events: visible;
+            border-left: $base-border;
+            transform: translateX(0);
+            transition: transform 500ms $base-timing, opacity 0ms $base-timing;
+        }
+    }
+    .nav-toggle {
+        .toggle-bar-2 {
+            transform: translate(-10px, -50%);
+        }
+        .toggle-bar-3 {
+            transform: translate(-10px, -50%);
+        }
+    }
+}
+// Hamburger Menu
+.nav-toggle {
+    padding: 5px 0;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+    @media ($menu) {
+        display: none;
+    }
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+    &:focus {
+        outline: $focus-outline;
+        outline-offset: $focus-outline-offset;
+    }
+    .toggle-wrapper {
+        display: block;
+        width: 32px;
+        height: 20px;
+        margin: 0 auto;
+        position: relative;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+    .toggle-bar {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $white;
+        border-radius: 50px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+    .toggle-bar-1 {
+        top: 0px;
+    }
+    .toggle-bar-2, 
+    .toggle-bar-3 {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .toggle-bar-4 {
+        bottom: 0;
+    }
+}

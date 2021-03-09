@@ -1,0 +1,236 @@
+@mixin btn-base() {
+  position: relative;
+  display: inline-block;
+  padding: 17px 25px 15px;
+  margin-bottom: 15px;
+  
+  font-family: $font-two;
+  font-size: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $black-weight;
+  line-height: 1;
+  
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: $btn-border-radius;
+
+  transition: color $base-duration $base-timing, background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  appearance: none;
+  box-sizing: content-box;
+  cursor: pointer;
+  @media ($tablet) {
+    display: inline-block;
+    padding: 12px 25px 10px;
+  }
+  &:hover {
+    outline: none;
+  }
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+  + * {
+    margin-left: 15px;
+  }
+}
+@mixin btn-1() {
+  @include btn-base();
+  color: $btn-text-color;
+  background-color: $btn-bg-color;
+  border: none !important;
+  letter-spacing: 0.5px;
+  &:hover {
+    background-color: $btn-bg-color-hover;
+    color: $btn-text-color-hover;
+    outline: none;
+  }
+  // @media ($mobile-lg) {
+  //   display: block;
+  //   // width: 100%;
+  // }
+}
+@mixin btn-2() {
+  @include btn-base();
+  color: $base-font-color;
+  background-color: $transparent;
+  border: none !important;
+  letter-spacing: 0.5px;
+  &:hover {
+    color: $black;
+    background-color: $transparent;
+  }
+}
+
+// Theme buttons
+.front-end {
+  .buttons,
+  .wp-block-button {
+    position: relative;
+    padding-top: 15px;
+    z-index: 1;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    .wp-block-button {
+      padding-top: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  p + {
+    .buttons,
+    .wp-block-button {
+      padding-top: 0; // Top padding for buttons under paragraphs
+    }
+  }
+  .buttons .btn,
+  .wp-block-button__link,
+  input[type="submit"],
+  input[type="reset"] {
+    @include btn-base();
+    &.btn-1 {
+      @include btn-1();
+    }
+    &.btn-2 {
+      @include btn-2();
+    }
+  }
+
+  .facetwp-facet-load_more {
+    text-align: center;
+  }
+  // .facetwp-load-more {
+  //   margin: 0 auto;
+  //   padding: 2px 25px 14px;
+  //   border: 0;
+  //   color: $black;
+  //   background-color: $transparent;
+  //   font-size: 14px;
+  //   -webkit-font-smoothing: antialiased;
+  //   font-weight: 600;
+  //   line-height: 1;
+  //   letter-spacing: 3px;
+  //   text-transform: uppercase;
+  //   &:after {
+  //     content: '';
+  //     position: relative;
+  //     top: 10px;
+  //     display: inline-block;
+  //     width: 9px;
+  //     height: 28px;
+  //     margin-left: 8px;
+  //     background: url('../img/arrow-down.svg') no-repeat;
+  //     transform: translate(0,0);
+  //     transition: transform 250ms ease;
+  //   }
+  //   &:hover {
+  //     &:after {
+  //       transform: translate(0, 10px);
+  //       transition: transform 250ms ease 50ms;
+  //     }
+  //   }
+  //   &:focus {
+  //     outline: $focus-outline;
+  //     outline-offset: $focus-outline-offset;
+  //   }
+  // }
+}
+
+// Button style in the editor
+.wp-block-button__link {
+  @include btn-1();
+}
+.is-style-outline .wp-block-button__link {
+  @include btn-2();
+}
+
+// .pagination.buttons {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   @media ($tablet) {
+//     justify-content: center;
+//   }
+//   a {
+//     @include btn-base();
+//     @include btn-2();
+
+//     @media (max-width: 680px) {
+//       display: block;
+//       padding: 17px 25px 15px;
+//     }
+//   }
+//   a[rel="prev"] {
+//     &:before {
+//       content: '';
+//       display: inline-block;
+//       width: 28px;
+//       height: 9px;
+//       margin-right: 8px;
+//       background: url('../img/arrow-left.svg') no-repeat;
+//       transform: translateX(0);
+//       transition: transform 250ms ease;
+//     }
+//     &:after {
+//       content: none;
+//     }
+//     &:hover {
+//       color: $black;
+//       background-color: $transparent;
+//       &:before {
+//         transform: translateX(-10px);
+//         transition: transform 250ms ease 50ms;
+//       }
+//     }
+//     &:only-child {
+//       margin-right: auto;
+//     }
+//   }
+//   a[rel="next"] {
+//     &:after {
+//       content: '';
+//       display: inline-block;
+//       width: 28px;
+//       height: 9px;
+//       margin-left: 8px;
+//       background: url('../img/arrow-right.svg') no-repeat;
+//       transform: translateX(0);
+//       transition: transform 250ms ease;
+//     }
+//     &:hover {
+//       color: $black;
+//       background-color: $transparent;
+//       &:after {
+//         transform: translateX(10px);
+//         transition: transform 250ms ease 50ms;
+//       }
+//     }
+//     &:only-child {
+//       margin-left: auto;
+//     }
+//   }
+// }
+
+// Repeat buttons styles from above to style the form buttons on the front end
+.front-end .layout:not(.hero) form,
+.front-end .block:not(.hero) form {
+  #{$all-buttons} {
+    @include btn-base();
+    @include btn-1();
+    @media ($tablet) {
+      display: block;
+      margin: 0 auto 15px;
+    }
+  }
+}
